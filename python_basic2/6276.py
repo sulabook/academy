@@ -1,4 +1,4 @@
-result = [0] * 9
+result = [0] * 8
 
 for i in range(2, 10):
     result[i - 2]  = list()
