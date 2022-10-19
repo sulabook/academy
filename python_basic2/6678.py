@@ -1,6 +1,9 @@
 data = []
 while True:
-    data.append(input().upper())
+    try:
+        data.append(input().upper())
+    except EOFError:
+        break
     if data[len(data) - 1] == '':
         data.pop()
         break
