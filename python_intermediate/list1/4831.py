@@ -9,11 +9,8 @@ for t in range(T):
     # chargingStations: 충전기가 있는 정류장 위치
     chargingStations = list(map(int, input().split(' ')))
 
-    # 충전기가 있는 정류장 위치를 고려한 0 ~ N 정류장
-    busStops = [1 if i in chargingStations else 0 for i in range(N + 1)]
-
     # 모든 경우의 수
-    routes = [busStops[:] for _ in range(2 ** M)]
+    routes = [[0] * (N + 1) for _ in range(2 ** M)]
 
     for i in range(2 ** M):     # 각각의 경우에서
         for j in range(1, M + 1):       # 충전기 위치에 0 / 1 분기를 만든다
