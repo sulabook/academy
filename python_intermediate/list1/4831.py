@@ -28,7 +28,7 @@ for t in range(T):
     min_charge = M + 1      # 충전기수보다 1 큼. 종점 도착하는 경우 무조건 바뀜
     for route in routes:
         k = K       # 충전량
-        i = 1       # 위치
+        i = 0       # 위치
 
         while k > 0 and i < N:      
             i += 1      # 위치 1 증가
