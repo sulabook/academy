@@ -1,21 +1,16 @@
 T = int(input())     # total try
-KNM = []        # list of (K, N, M)
-C = []      # list of (charging stations)
-for t in range(T):
-    KNM.append(tuple(map(int, input().split(' '))))
-    C.append(tuple(map(int, input().split(' '))))
 
 for t in range(T):
     # K: 충전후 최대 이동 가능한 정류장 수
     # N: 0 ~ N 정류장
     # M: 충전기가 있는 정류장 수
-    K, N, M = KNM[t][0], KNM[t][1], KNM[t][2]
+    K, N, M = map(int, input().split(' '))
 
     # chargingStations: 충전기가 있는 정류장 위치
-    chargingStations = C[t]
+    chargingStations = list(map(int, input().split(' ')))
 
     # 충전기가 있는 정류장 위치를 고려한 0 ~ N 정류장
-    busStops = [1 if i in C[t] else 0 for i in range(N + 1)]
+    busStops = [1 if i in chargingStations else 0 for i in range(N + 1)]
 
     # 모든 경우의 수
     routes = [busStops[:] for _ in range(2 ** M)]
