@@ -1,8 +1,7 @@
 T = int(input())
-
 for t in range(T):
-    N, M = map(int, input().split(' '))
-    data_list = list(map(int, input().split(' ')))
+    N, M = map(int, input().split())
+    data_list = list(map(int, input().split()))
     min_sum = 1e8
     max_sum = 1
     for i in range(N - M + 1):
